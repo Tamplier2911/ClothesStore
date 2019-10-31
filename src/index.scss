@@ -1,0 +1,55 @@
+// COLOR PALLET
+
+$colors: (
+  prime: #333,
+  second: #ffe,
+  third: #f2f0f1,
+  fourth: #f5b149,
+  black: #000,
+  white: #fff
+);
+
+$font-sizes: (
+  xl: 3rem,
+  lg: 2.5rem,
+  md: 2rem,
+  sm: 1.8rem,
+  xs: 1.6rem
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+@function size($size) {
+  @return map-get($font-sizes, $size);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: 1078px) {
+    font-size: 56.25%;
+  }
+
+  @media only screen and (max-width: 800px) {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #333;
+}

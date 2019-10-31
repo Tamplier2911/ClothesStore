@@ -1,0 +1,60 @@
+@import "../../index.scss";
+
+// parent element must have
+/*
+.PARENT-CLASS-NAME:hover .dropdown {
+    visibility: visible;
+    opacity: 1;
+  }
+*/
+
+.dropdown {
+  position: absolute;
+  list-style: none;
+  top: 3rem;
+  left: -0.1rem;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  border: 0.1rem lighten(color(prime), 30%) solid;
+  background-color: darken(color(third), 5%);
+
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.4s, visibility 0.4s;
+
+  z-index: 10;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    border-right: 1rem solid transparent;
+    border-left: 1rem solid transparent;
+    border-bottom: 1rem solid lighten(color(prime), 30%);
+    top: -1rem;
+    left: 7.5rem;
+  }
+
+  &__item {
+    // margin: 0.5rem 0;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.3s;
+
+    &:link,
+    &:visited {
+      color: color(prime);
+    }
+
+    &:hover,
+    &:active {
+      color: #a3a3a3;
+    }
+  }
+}

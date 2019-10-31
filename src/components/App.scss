@@ -1,0 +1,17 @@
+@import "../index.scss";
+
+.container {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(2rem, 1fr)
+    [center-start] repeat(
+      8,
+      [col-start] minmax(min-content, 16rem) [col-end]
+    )
+    [center-end]
+    minmax(2rem, 1fr) [full-end];
+  grid-template-rows: repeat(4, min-content);
+  grid-row-gap: 1.6rem;
+
+  background-color: color(third);
+}

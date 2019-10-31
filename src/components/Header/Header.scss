@@ -1,0 +1,154 @@
+@import "../../index.scss";
+
+.header {
+  grid-column: center-start / center-end;
+  padding: 2rem 0;
+
+  display: grid;
+  grid-template-columns:
+    1fr repeat(7, minmax(min-content, 16rem))
+    1fr;
+  grid-template-rows: repeat(3, min-content);
+  grid-gap: 2rem;
+
+  &__wrapper {
+    width: 10rem;
+    height: 6.5rem;
+  }
+
+  &__logo {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  &__navTop {
+    grid-column: 6 / -1;
+    display: grid;
+    align-items: center;
+
+    @media only screen and (max-width: 1000px) {
+      grid-column: 5 / -1;
+    }
+
+    @media only screen and (max-width: 790px) {
+      grid-column: 4 / -1;
+    }
+
+    @media only screen and (max-width: 670px) {
+      grid-column: 2 / -1;
+    }
+
+    &--ul {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 1rem;
+
+      align-items: center;
+      justify-items: center;
+      list-style: none;
+    }
+
+    &--li {
+      font-size: 1.6rem;
+    }
+
+    &--link {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+
+      transition: color 0.3s;
+
+      &:link,
+      &:visited {
+        color: color(prime);
+      }
+
+      &:hover,
+      &:active {
+        color: #a3a3a3;
+      }
+    }
+
+    &--link:hover .header__navTop--link-search {
+      fill: #a3a3a3;
+    }
+
+    &--link:hover .header__navTop--link-cart {
+      fill: #a3a3a3;
+    }
+
+    &--link-search {
+      width: 2rem;
+      height: 2rem;
+
+      transition: fill 0.3s;
+    }
+
+    &--link-cart {
+      width: 3rem;
+      height: 3rem;
+
+      transition: fill 0.3s;
+    }
+  }
+
+  &__main {
+    grid-column: 1 / -1;
+    text-align: center;
+
+    &--heading {
+      font-family: "Great Vibes", sans-serif;
+      font-weight: 300;
+      font-size: size(lg) * 2.5;
+      letter-spacing: 0.5rem;
+    }
+  }
+
+  &__navBot {
+    grid-column: 2 / 8;
+
+    @media only screen and (max-width: 760px) {
+      grid-column: 1 / -1;
+    }
+
+    &--ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      justify-items: center;
+      grid-column-gap: 1rem;
+    }
+
+    &--li {
+      font-size: 1.6rem;
+
+      position: relative;
+    }
+
+    &--link {
+      text-decoration: none;
+
+      transition: color 0.3s;
+
+      &:link,
+      &:visited {
+        color: color(prime);
+      }
+
+      &:hover,
+      &:active {
+        color: #a3a3a3;
+      }
+    }
+  }
+}
+
+// change to dropdown
+.dt-trigger:hover .dropdown {
+  visibility: visible;
+  opacity: 1;
+}
